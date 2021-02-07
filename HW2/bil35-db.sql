@@ -3,13 +3,13 @@ Author: Bingyao Li, bil35
         Yilun Zhao, yiz178
 */
 
-/* Question 1 start*/
-CREATE DATABASE USForest;
+/* Question 1 start */
+/*CREATE DATABASE USForest;*/
 
-DROP TABLE IF EXISTS FOREST;
+DROP TABLE IF EXISTS FOREST CASCADE;
 CREATE TABLE FOREST
 (
-    forest_no varchar(10) NOT NULL,
+    forest_no varchar(10) NOT NULL PRIMARY KEY,
     name varchar(30),
     area real,
     acid_level real,
@@ -20,16 +20,16 @@ CREATE TABLE FOREST
     sensor_count integer
 );
 
-DROP TABLE IF EXISTS STATE;
+DROP TABLE IF EXISTS STATE CASCADE;
 CREATE TABLE STATE
 (
     name varchar(30),
-    abbreviation varchar(2),
+    abbreviation varchar(2) NOT NULL PRIMARY KEY,
     area real,
     population integer
 );
 
-DROP TABLE IF EXISTS COVERAGE;
+DROP TABLE IF EXISTS COVERAGE CASCADE;
 CREATE TABLE COVERAGE
 (
     forest_no varchar(10) REFERENCES FOREST(forest_no),
@@ -38,25 +38,33 @@ CREATE TABLE COVERAGE
     area real
 );
 
-DROP TABLE IF EXISTS ROAD;
+DROP TABLE IF EXISTS ROAD CASCADE;
 CREATE TABLE ROAD
 (
-    road_no varchar(10) NOT NULL,
+    road_no varchar(10) NOT NULL PRIMARY KEY,
     name varchar(30),
     length real
 );
 
-DROP TABLE IF EXISTS INTERSECTION;
+DROP TABLE IF EXISTS INTERSECTION CASCADE;
 CREATE TABLE INTERSECTION
 (
     forest_no varchar(10) REFERENCES FOREST(forest_no),
     road_no varchar(10) REFERENCES ROAD(road_no)
 );
 
-DROP TABLE IF EXISTS SENSOR;
+DROP TABLE IF EXISTS WORKER CASCADE;
+CREATE TABLE WORKER
+(
+    ssn varchar(9) UNIQUE NOT NULL PRIMARY KEY,
+    name varchar(30) UNIQUE,
+    rank integer
+);
+
+DROP TABLE IF EXISTS SENSOR CASCADE;
 CREATE TABLE SENSOR
 (
-    sensor_id integer NOT NULL,
+    sensor_id integer NOT NULL PRIMARY KEY,
     X real,
     Y real,
     last_charged timestamp,
@@ -65,7 +73,7 @@ CREATE TABLE SENSOR
     last_read timestamp
 );
 
-DROP TABLE IF EXISTS REPORT;
+DROP TABLE IF EXISTS REPORT CASCADE;
 CREATE TABLE REPORT
 (
     sensor_id integer REFERENCES SENSOR(sensor_id),
@@ -73,11 +81,12 @@ CREATE TABLE REPORT
     report_time timestamp
 );
 
-DROP TABLE IF EXISTS WORKER;
-CREATE TABLE WORKER
-(
-    ssn varchar(9) UNIQUE,
-    name varchar(30) UNIQUE,
-    rank integer
-);
+/* Question 1 end */
+
+
+/* Question 2 start */
+
+
+
+
 
