@@ -1,0 +1,86 @@
+------------------------------------
+-- Bingyao Li     bil35
+-- Yilun Zhao     yiz178
+------------------------------------
+
+
+
+  name  
+--------
+ Bayard
+ Carson
+(2 rows)
+
+ name 
+------
+ John
+ Tim
+(2 rows)
+
+     name     
+--------------
+ Stone Valley
+(1 row)
+
+        name         
+---------------------
+ Pennsylvania Forest
+(1 row)
+
+    dow    | avg_count 
+-----------+-----------
+ Wednesday |         3
+(1 row)
+
+ week | start_week |  end_week  |  avg_temperature   
+------+------------+------------+--------------------
+    1 | 2020-08-30 | 2020-09-06 |              49.75
+    2 | 2020-09-06 | 2020-09-13 |              49.75
+    4 | 2020-09-20 | 2020-09-27 |              64.75
+    5 | 2020-09-27 | 2020-10-04 | 46.666666666666664
+    6 | 2020-10-04 | 2020-10-11 |               46.5
+    7 | 2020-10-11 | 2020-10-18 |                 51
+    8 | 2020-10-18 | 2020-10-25 |                 79
+    9 | 2020-10-25 | 2020-11-01 | 50.666666666666664
+   10 | 2020-11-01 | 2020-11-08 |                 56
+   11 | 2020-11-08 | 2020-11-15 |              51.75
+   12 | 2020-11-15 | 2020-11-22 | 57.333333333333336
+   13 | 2020-11-22 | 2020-11-29 |               55.6
+   14 | 2020-11-29 | 2020-12-06 |                 60
+(13 rows)
+
+SET
+SET CONSTRAINTS
+INSERT 0 1
+UPDATE 1
+COMMIT
+SET
+SET CONSTRAINTS
+UPDATE 1
+UPDATE 1
+INSERT 0 1
+UPDATE 2
+UPDATE 7
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+      name      
+----------------
+ Crooked Forest
+(1 row)
+
+ name | employing_state | sum  
+------+-----------------+------
+ John | OH              | 7700
+(1 row)
+
+     name     
+--------------
+ Big Woods
+ Stone Valley
+(2 rows)
+
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE TRIGGER
